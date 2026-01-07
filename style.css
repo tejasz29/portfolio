@@ -228,10 +228,10 @@ article h3 {
 .ring circle {
   fill: none;
   stroke: #22c55e; /* cool green */
-  stroke-width: 2;
+  stroke-width: 3;
   stroke-dasharray: 302;
   stroke-dashoffset: 302;
-  transition: stroke-dashoffset 0.6s ease;
+  transition: stroke-dashoffset 1s ease;
 }
 
 /* Hover effect */
@@ -240,10 +240,9 @@ article h3 {
 }
 
 .avatar:hover img.profile {
-  filter: grayscale(0%) contrast(1.05);
-  transition-delay: 0.6s; /* matches ring completion */
+  filter: grayscale(10%) contrast(1.05);
+  transition-delay: 1s; /* matches ring completion */
 }
-
 
 
 .socials {
