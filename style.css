@@ -274,8 +274,24 @@ article h3 {
   color: #ffffff;
 }
 
-.socials a:hover svg {
-  opacity: 1;
+
+
+.socials .linkedin:hover {
+  color: #0a66c2;
+}
+
+.socials .email:hover {
+  color: #ea4335;
+}
+
+.socials .github:hover {
+  color: #ffffff;
+}
+
+
+
+.contact-icons a:hover svg {
+  fill: #2f95f5;
 }
 
 .avatar::after {
@@ -484,7 +500,7 @@ article h3 {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: #bdbdbd;
+  /* color: #bdbdbd; */
   text-decoration: none;
   font-size: 0.8rem;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -500,6 +516,26 @@ article h3 {
   color: #ffffff;
   transform: translateY(-2px);
 }
-.contact-icons a:hover svg {
-  fill: #2f95f5;
+
+/* Contact icons base */
+.contact-icons svg {
+  fill: currentColor;
+  transition: fill 0.25s ease;
 }
+
+/* LinkedIn — blue */
+.contact-icons .linkedin:hover svg {
+  fill: #0a66c2;
+}
+
+/* Email — red */
+.contact-icons .email:hover svg {
+  fill: #ea4335;
+}
+
+/* GitHub — white */
+.contact-icons .github:hover svg {
+  fill: #ffffff;
+}
+
+
