@@ -244,9 +244,14 @@ article h3 {
   transition-delay: 1s; 
 }*/
 
-.avatar.colored img.profile {
+/* .avatar.colored img.profile {
   filter: grayscale(0%) saturate(200%) contrast(1.2);
+} */
+
+.avatar.colored img.profile {
+  filter: none !important;
 }
+
 
 .socials {
   margin-top: 28px;
