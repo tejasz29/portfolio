@@ -241,12 +241,12 @@ article h3 {
 
 /* .avatar:hover img.profile {
   filter: grayscale(10%) contrast(1.05);
-  transition-delay: 1s; /* matches ring completion */
-} */
-.avatar.colored img.profile {
-  filter: grayscale(0%) contrast(1.05);
-}
+  transition-delay: 1s; 
+}*/
 
+.avatar.colored img.profile {
+  filter: grayscale(0%) saturate(200%) contrast(1.2);
+}
 
 .socials {
   margin-top: 28px;
