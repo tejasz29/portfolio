@@ -540,7 +540,7 @@ article h3 {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: 0.85rem;
   color: var(--muted);
 }
