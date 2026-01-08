@@ -22,15 +22,24 @@
 //   }, 200);
 // });
 
-const avatar = document.querySelector(".avatar");
-let isColored = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const avatar = document.querySelector(".avatar");
 
-avatar.addEventListener("mouseenter", () => {
-  // wait for ring animation to complete
-  setTimeout(() => {
-    isColored = !isColored;
-    avatar.classList.toggle("colored", isColored);
-  }, 600); // must match ring animation duration
+  if (!avatar) {
+    console.error("Avatar not found");
+    return;
+  }
+
+  let isColored = false;
+
+  avatar.addEventListener("mouseenter", () => {
+    setTimeout(() => {
+      isColored = !isColored;
+      avatar.classList.toggle("colored", isColored);
+      console.log("Avatar colored:", isColored);
+    }, 600);
+  });
 });
+
 
 
