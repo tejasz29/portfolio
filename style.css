@@ -537,4 +537,10 @@ article h3 {
   fill: #ffffff;
 }
 
-
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
