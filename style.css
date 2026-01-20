@@ -578,17 +578,17 @@ body {
     radial-gradient(
       900px 600px at 15% 10%,
       rgba(34, 197, 94, 0.14),
-      transparent 60%
+      transparent 30%
     ),
     radial-gradient(
       800px 500px at 85% 30%,
       rgba(59, 130, 246, 0.10),
-      transparent 65%
+      transparent 30%
     ),
     radial-gradient(
       700px 400px at 50% 90%,
       rgba(168, 85, 247, 0.08),
-      transparent 70%
+      transparent 40%
     ),
     #0a0a0a;
 }
