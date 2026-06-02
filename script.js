@@ -1,67 +1,162 @@
 
-const avatar = document.querySelector(".avatar img");
 
-let swapped = false;
-
-avatar.parentElement.addEventListener("mouseenter", () => {
-  if (swapped) return;
-
-  setTimeout(() => {
-    const altSrc = avatar.dataset.alt;
-    avatar.src = altSrc;
-    swapped = true;
-  }, 600); 
-});
-
-avatar.parentElement.addEventListener("mouseleave", () => {
-  setTimeout(() => {
-    avatar.src = "me-1.jpg";
-    swapped = false;
-  }, 200);
-});
+// /* Avatar */
 
 // const avatar = document.querySelector(".avatar img");
-// const wrapper = document.querySelector(".avatar-wrapper");
-// const progressRing = document.querySelector(".ring-progress");
-// const words = document.querySelectorAll(".highlight-word");
 
 // let swapped = false;
-// let timeout;
 
-// wrapper.addEventListener("mouseenter", () => {
+// avatar.parentElement.addEventListener("mouseenter", () => {
 //   if (swapped) return;
 
-//   // Complete green circle
-//   progressRing.style.strokeDashoffset = "0";
-
-//   // Highlight words
-//   words.forEach((word, index) => {
-//     setTimeout(() => {
-//       word.classList.add("highlight-active");
-//     }, index * 200);
-//   });
-
-//   timeout = setTimeout(() => {
-//     avatar.src = avatar.dataset.alt;
+//   setTimeout(() => {
+//     const altSrc = avatar.dataset.alt;
+//     avatar.src = altSrc;
 //     swapped = true;
-//   }, 600);
+//   }, 600); 
 // });
 
-// wrapper.addEventListener("mouseleave", () => {
-
-//   clearTimeout(timeout);
-
-//   // Reset circle
-//   progressRing.style.strokeDashoffset = "754";
-
-//   // Remove highlights
-//   words.forEach(word => {
-//     word.classList.remove("highlight-active");
-//   });
-
+// avatar.parentElement.addEventListener("mouseleave", () => {
 //   setTimeout(() => {
 //     avatar.src = "me-1.jpg";
 //     swapped = false;
 //   }, 200);
 // });
+
+
+// const avatar = document.querySelector(".avatar img");
+
+// let swapped = false;
+
+// avatar.parentElement.addEventListener("mouseenter", () => {
+//   if (swapped) return;
+
+//   setTimeout(() => {
+//     const altSrc = avatar.dataset.alt;
+//     avatar.src = altSrc;
+//     swapped = true;
+//   }, 600);
+// });
+
+// avatar.parentElement.addEventListener("mouseleave", () => {
+//   setTimeout(() => {
+//     avatar.src = "me-1.jpg";
+//     swapped = false;
+//   }, 200);
+// });
+
+
+
+// /* Achievement Gallery */
+
+// document.querySelectorAll(".timeline-item").forEach(item => {
+
+//   const photos = item.dataset.photos;
+
+//   if (!photos) return;
+
+//   const gallery = document.createElement("div");
+//   gallery.className = "timeline-gallery";
+
+//   const grid = document.createElement("div");
+//   grid.className = "timeline-gallery-grid";
+
+//   photos.split(",").forEach(src => {
+
+//     const img = document.createElement("img");
+//     img.src = src.trim();
+//     img.alt = "Achievement";
+
+//     grid.appendChild(img);
+//   });
+
+//   gallery.appendChild(grid);
+
+//   item.querySelector(".timeline-body")
+//       .appendChild(gallery);
+
+//   item.addEventListener("click", () => {
+
+//     item.classList.toggle("active");
+
+//   });
+
+// });
+
+
+
+
+
+
+
+// Avatar hover effect
+const avatar = document.querySelector(".avatar img");
+
+if (avatar) {
+
+  let swapped = false;
+
+  avatar.parentElement.addEventListener("mouseenter", () => {
+
+    if (swapped) return;
+
+    const altSrc = avatar.dataset.alt;
+
+    // Only swap if second image exists
+    if (altSrc) {
+      setTimeout(() => {
+        avatar.src = altSrc;
+        swapped = true;
+      }, 600);
+    }
+  });
+
+  avatar.parentElement.addEventListener("mouseleave", () => {
+
+    const originalSrc = "me-1.jpeg";
+
+    setTimeout(() => {
+      avatar.src = originalSrc;
+      swapped = false;
+    }, 200);
+  });
+}
+
+
+/* Achievement Expand Gallery */
+
+document.querySelectorAll(".timeline-item").forEach(item => {
+
+  const photos = item.dataset.photos;
+
+  if (!photos) return;
+
+  const gallery = document.createElement("div");
+  gallery.className = "timeline-gallery";
+
+  const grid = document.createElement("div");
+  grid.className = "timeline-gallery-grid";
+
+  photos.split(",").forEach(src => {
+
+    const img = document.createElement("img");
+    img.src = src.trim();
+    img.alt = "Achievement";
+
+    grid.appendChild(img);
+  });
+
+  gallery.appendChild(grid);
+
+  item.querySelector(".timeline-body")
+      .appendChild(gallery);
+
+  item.addEventListener("click", () => {
+
+    item.classList.toggle("active");
+
+  });
+
+});
+
 
