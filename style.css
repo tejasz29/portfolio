@@ -241,7 +241,7 @@ article h3 {
 
 .avatar:hover img.profile {
   filter: grayscale(10%) contrast(1.05);
-  transition-delay: 1s; /* matches ring completion */
+  transition-delay: 1s; 
 }
 
 
@@ -536,5 +536,62 @@ article h3 {
 .contact-icons .github:hover svg {
   fill: #ffffff;
 }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+.layout {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* body {
+  background:
+    radial-gradient(
+      800px 500px at 10% 5%,
+      rgba(34, 197, 94, 0.12),
+      transparent 60%
+    ),
+    #0a0a0a;
+} */
+
+body {
+  background:
+    radial-gradient(
+      900px 600px at 15% 10%,
+      rgba(34, 197, 94, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      800px 500px at 85% 30%,
+      rgba(59, 130, 246, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      700px 400px at 50% 90%,
+      rgba(168, 85, 247, 0.08),
+      transparent 40%
+    ),
+    #0a0a0a;
+}
+
 
 

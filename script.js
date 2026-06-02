@@ -1,5 +1,3 @@
-// Minimal JS on purpose
-// This site is about clarity, not gimmicks
 
 const avatar = document.querySelector(".avatar img");
 
@@ -12,7 +10,7 @@ avatar.parentElement.addEventListener("mouseenter", () => {
     const altSrc = avatar.dataset.alt;
     avatar.src = altSrc;
     swapped = true;
-  }, 600); // matches CSS animation duration
+  }, 600); 
 });
 
 avatar.parentElement.addEventListener("mouseleave", () => {
