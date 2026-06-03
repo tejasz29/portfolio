@@ -617,6 +617,58 @@
       }
     });
   });
+
+// ── Avatar ring + highlight words ──
+const avatarWrapper = document.querySelector('.avatar');
+const avatarImg     = document.querySelector('.avatar img.profile');
+
+const highlightWords = [
+  'full-stack development',
+  'Artificial Intelligence',
+  'Machine Learning',
+  'hands-on projects',
+  'fundamentals',
+  'abstractions',
+
+];
+
+document.querySelectorAll('#about p').forEach(p => {
+  let html = p.innerHTML;
+  highlightWords.forEach(word => {
+    const regex = new RegExp(`(${word})`, 'gi');
+    html = html.replace(regex, '<span class="highlight-word">$1</span>');
+  });
+  p.innerHTML = html;
+});
+
+if (avatarWrapper) {
+  let swapped    = false;
+  let swapTimer  = null;
+  let resetTimer = null;
+
+  avatarWrapper.addEventListener('mouseenter', () => {
+    clearTimeout(resetTimer);
+    swapTimer = setTimeout(() => {
+      document.querySelectorAll('.highlight-word').forEach((el, i) => {
+        setTimeout(() => el.classList.add('lit'), i * 80);
+      });
+    }, 500);
+
+    if (!swapped && avatarImg.dataset.alt) {
+      setTimeout(() => { avatarImg.src = avatarImg.dataset.alt; swapped = true; }, 600);
+    }
+  });
+
+  avatarWrapper.addEventListener('mouseleave', () => {
+    clearTimeout(swapTimer);
+    resetTimer = setTimeout(() => {
+      document.querySelectorAll('.highlight-word').forEach(el => el.classList.remove('lit'));
+    }, 150);
+    setTimeout(() => { avatarImg.src = 'me-1.jpeg'; swapped = false; }, 200);
+  });
+}
+
+
 </script>
 
 </body>
