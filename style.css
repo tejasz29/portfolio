@@ -775,7 +775,17 @@ body {
 }
 
 
+/* ── Highlight words in About ── */
+.highlight-word {
+  color: #e6e6e6;                     /* same as body text — invisible until lit */
+  position: relative;
+  transition: color 0.35s ease;
+}
 
+.highlight-word.lit {
+  color: #22c55e;                     /* your green */
+  text-shadow: 0 0 18px rgba(34, 197, 94, 0.45);
+}
 
 /* .timeline-body {
   cursor: pointer;

@@ -47,80 +47,112 @@
 
 
 
-// /* Achievement Gallery */
-
-// document.querySelectorAll(".timeline-item").forEach(item => {
-
-//   const photos = item.dataset.photos;
-
-//   if (!photos) return;
-
-//   const gallery = document.createElement("div");
-//   gallery.className = "timeline-gallery";
-
-//   const grid = document.createElement("div");
-//   grid.className = "timeline-gallery-grid";
-
-//   photos.split(",").forEach(src => {
-
-//     const img = document.createElement("img");
-//     img.src = src.trim();
-//     img.alt = "Achievement";
-
-//     grid.appendChild(img);
-//   });
-
-//   gallery.appendChild(grid);
-
-//   item.querySelector(".timeline-body")
-//       .appendChild(gallery);
-
-//   item.addEventListener("click", () => {
-
-//     item.classList.toggle("active");
-
-//   });
-
-// });
-
-
-
-
 
 
 
 // Avatar hover effect
-const avatar = document.querySelector(".avatar img");
+// const avatar = document.querySelector(".avatar img");
 
-if (avatar) {
+// if (avatar) {
 
-  let swapped = false;
+//   let swapped = false;
 
-  avatar.parentElement.addEventListener("mouseenter", () => {
+//   avatar.parentElement.addEventListener("mouseenter", () => {
 
-    if (swapped) return;
+//     if (swapped) return;
 
-    const altSrc = avatar.dataset.alt;
+//     const altSrc = avatar.dataset.alt;
 
-    // Only swap if second image exists
-    if (altSrc) {
+//     // Only swap if second image exists
+//     if (altSrc) {
+//       setTimeout(() => {
+//         avatar.src = altSrc;
+//         swapped = true;
+//       }, 600);
+//     }
+//   });
+
+//   avatar.parentElement.addEventListener("mouseleave", () => {
+
+//     const originalSrc = "me-1.jpeg";
+
+//     setTimeout(() => {
+//       avatar.src = originalSrc;
+//       swapped = false;
+//     }, 200);
+//   });
+// }
+
+
+// ── Avatar ring + highlight effect ──
+const avatarWrapper = document.querySelector('.avatar');
+const ringCircle    = document.querySelector('.ring circle');
+const avatar        = document.querySelector('.avatar img');
+
+// Words to highlight in the About section — edit these to match your exact text
+const highlightWords = [
+  'full-stack development',
+  'Artificial Intelligence',
+  'Machine Learning',
+  'hands-on projects',
+  'fundamentals'
+];
+
+// Wrap highlight words in <mark> spans on page load
+const aboutParagraphs = document.querySelectorAll('#about p');
+aboutParagraphs.forEach(p => {
+  let html = p.innerHTML;
+  highlightWords.forEach(word => {
+    // case-insensitive, whole phrase match
+    const regex = new RegExp(`(${word})`, 'gi');
+    html = html.replace(regex, `<span class="highlight-word">$1</span>`);
+  });
+  p.innerHTML = html;
+});
+
+if (avatarWrapper) {
+  let swapped   = false;
+  let swapTimer = null;
+  let resetTimer = null;
+
+  avatarWrapper.addEventListener('mouseenter', () => {
+    clearTimeout(resetTimer);
+
+    // Highlight words with a slight stagger after ring starts
+    swapTimer = setTimeout(() => {
+      document.querySelectorAll('.highlight-word').forEach((el, i) => {
+        setTimeout(() => el.classList.add('lit'), i * 80);
+      });
+    }, 500); // start after ring is ~halfway
+
+    // Swap photo after ring completes (ring transition is 1s)
+    if (!swapped && avatar.dataset.alt) {
       setTimeout(() => {
-        avatar.src = altSrc;
+        avatar.src = avatar.dataset.alt;
         swapped = true;
       }, 600);
     }
   });
 
-  avatar.parentElement.addEventListener("mouseleave", () => {
+  avatarWrapper.addEventListener('mouseleave', () => {
+    clearTimeout(swapTimer);
 
-    const originalSrc = "me-1.jpeg";
+    // Un-highlight words
+    resetTimer = setTimeout(() => {
+      document.querySelectorAll('.highlight-word').forEach(el => {
+        el.classList.remove('lit');
+      });
+    }, 150);
 
+    // Reset photo
     setTimeout(() => {
-      avatar.src = originalSrc;
+      avatar.src = 'me-1.jpeg';
       swapped = false;
     }, 200);
   });
 }
+
+
 
 
 /* Achievement Expand Gallery */
