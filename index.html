@@ -666,6 +666,44 @@ if (avatarWrapper) {
   });
 }
 
+// ── Highlight all major headings on avatar hover ──
+const headings = document.querySelectorAll('.content h2, .content h3');
+
+avatarWrapper.addEventListener('mouseenter', () => {
+  setTimeout(() => {
+    headings.forEach((el, i) => {
+      setTimeout(() => el.classList.add('heading-lit'), i * 100);
+    });
+  }, 400);
+});
+
+avatarWrapper.addEventListener('mouseleave', () => {
+  setTimeout(() => {
+    headings.forEach(el => el.classList.remove('heading-lit'));
+  }, 150);
+});
+
+
+// ── Minimal floating stars ──
+const canvas = document.createElement('div');
+canvas.className = 'stars-canvas';
+document.body.prepend(canvas);
+
+for (let i = 0; i < 50; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2 + 1; // 1px–3px, more visible
+  star.style.cssText = `
+    width: ${size}px;
+    height: ${size}px;
+    top: ${Math.random() * 100}%;
+    left: ${Math.random() * 100}%;
+    --dur: ${Math.random() * 4 + 3}s;
+    --delay: -${Math.random() * 8}s;
+    opacity: ${Math.random() * 0.3 + 0.2};
+  `;
+  canvas.appendChild(star);
+}
 
 </script>
 
