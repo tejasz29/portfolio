@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tejas Eklare</title>
+  <meta name="description" content="Portfolio of Tejas Eklare — CS undergrad 
+  at VPKBIET, Pune. Full-stack developer building web apps and exploring AI/ML.">
+  <title>Tejas Eklare — Full-Stack Developer & CS Student</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/jpg" href="img.jpg">
@@ -50,40 +52,12 @@
       <img src="me-1.jpeg" alt="Tejas portrait" class="profile" />
     </div>
 
-    <!-- <div class="avatar-wrapper">
-  <svg class="progress-ring" width="260" height="260">
-    <circle
-      class="ring-bg"
-      cx="130"
-      cy="130"
-      r="120"
-    ></circle>
-
-    <circle
-      class="ring-progress"
-      cx="130"
-      cy="130"
-      r="120"
-    ></circle>
-  </svg>
-
-  <div class="avatar">
-    <img src="me-1.jpg" data-alt="me-2.jpg" alt="Profile">
-  </div>
-</div>
-
-<p class="about-text">
-  I'm a <span class="highlight-word">Computer Engineering</span>
-  undergraduate passionate about
-  <span class="highlight-word">Full Stack Development</span> and
-  <span class="highlight-word">AI</span>.
-</p> -->
-
-
+    
 
 
     <h1>Hey, I'm Tejas</h1>
-    <p class="tagline">Computer Engineering student.</p>
+    <p class="tagline">Full-stack developer & CS undergrad who builds practical,
+AI-integrated web apps.</p>
 
     <div class="location">
       <span class="dot"></span>
@@ -103,6 +77,8 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm10 7L3.5 6.5h17L12 11zm-8 7h16V8.2l-8 4.8-8-4.8V18z"/></svg>
         <span>Email</span>
       </a>
+
+      <a href="certificates/Tejas Eklare.pdf" class="mobile-link resume-mobile" download>↓ Download Resume</a>
     </div>
   </aside>
 
@@ -113,27 +89,57 @@
     <article id="about">
       <h2>About</h2>
       <p>
-        I'm a Computer Engineering undergraduate passionate about full-stack development and building practical, user-focused applications. Alongside web development, I'm exploring Artificial Intelligence and Machine Learning, with an interest in integrating intelligent features into modern applications. I enjoy understanding fundamentals deeply and continuously learning through hands-on projects.
-      </p>
+        I'm a Computer Engineering undergraduate at VPKBIET, Pune, focused on 
+        full-stack development and building things that are actually useful. I've 
+        worked on projects ranging from IoT voice assistants to multilingual 
+        platforms for farmers — driven by the idea that good software solves real 
+        problems.
       <p>
-        I prefer learning fundamentals deeply instead of relying on abstractions I don't fully understand.
+        I'm currently exploring AI and Machine Learning, and how to integrate intelligent 
+        features into everyday applications. I like understanding how things work 
+        under the hood rather than relying on abstractions I haven't earned yet.
       </p>
     </article>
 
     <!-- SKILLS -->
     <article id="skills">
       <h3>Skills</h3>
-      <div class="skills-grid">
-        <div class="skill-card"><img src="icons/html-5.png" alt=""><span>HTML5</span></div>
-        <div class="skill-card"><img src="icons/css-3.png" alt=""><span>CSS</span></div>
-        <div class="skill-card"><img src="icons/js.png" alt=""><span>JavaScript</span></div>
-        <div class="skill-card"><img src="icons/science.png" alt=""><span>React</span></div>
-        <div class="skill-card"><img src="icons/tailwind.svg" alt=""><span>Tailwind</span></div>
-        <div class="skill-card"><img src="icons/social.png" alt=""><span>Git</span></div>
+      <br>
 
-        <div class="skill-card"><img src="icons/python.png" alt=""><span>Python</span></div>
-        <div class="skill-card"><img src="icons/c-.png" alt=""><span>C++</span></div>
-      </div>
+    <div class="skills-category">
+    <h4 class="skills-label">Frontend</h4>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="icons/html-5.png" alt=""><span>HTML5</span></div>
+      <div class="skill-card"><img src="icons/css-3.png" alt=""><span>CSS</span></div>
+      <div class="skill-card"><img src="icons/js.png" alt=""><span>JavaScript</span></div>
+      <div class="skill-card"><img src="icons/science.png" alt=""><span>React</span></div>
+      <div class="skill-card"><img src="icons/tailwind.svg" alt=""><span>Tailwind</span></div>
+    </div>
+  </div>
+
+ 
+    <div class="skills-category">
+    <h4 class="skills-label">Languages & Backend</h4>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="icons/python.png" alt=""><span>Python</span></div>
+      <div class="skill-card"><img src="icons/c-.png" alt=""><span>C++</span></div>
+      <div class="skill-card"><img src="icons/node.png" alt=""><span>Node.js</span></div>
+      <div class="skill-card"><img src="icons/flask.png" alt=""><span>Flask</span></div>
+    </div>
+  </div>
+
+    <div class="skills-category">
+    <h4 class="skills-label">Tools</h4>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="icons/social.png" alt=""><span>Git</span></div>
+      <div class="skill-card"><img src="icons/esp32.png" alt=""><span>ESP32</span></div>
+      <div class="skill-card"><img src="icons/firebase.png" alt=""><span>Firebase</span></div>
+      <div class="skill-card"><img src="icons/vercel.png" alt=""><span>Vercel</span></div>
+    </div>
+  </div>
+
+
+
     </article>
 
     <!-- PROJECTS -->
@@ -142,7 +148,9 @@
       <br>
       <div class="project">
           <h4>Voice Assistant using ESP32 and Flask</h4>
-          <p>Developed a voice-controlled assistant using ESP32 and Flask, enabling users to interact intelligently through voice commands.</p>
+          <p>Built an IoT voice assistant that runs on an ESP32 microcontroller and 
+          communicates with a Flask backend to process and respond to voice commands. 
+          Explored the intersection of embedded hardware and web-based AI services.</p>
           <div class="project-meta">
             <span>Python</span><span>C++</span>
             <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank">Code ↗</a>
@@ -152,7 +160,9 @@
       <div class="projects">
         <div class="project">
           <h4>FRESCO Cultural Event Website</h4>
-          <p>Designed and built a responsive frontend for a college cultural event. Focused on typography, layout rhythm, and clarity across devices.</p>
+          <p>Designed and developed the official website for FRESCO, our college's
+          cultural event. Built fully responsive with a focus on visual 
+          hierarchy, smooth layout rhythm, and performance across devices.</p>
           <div class="project-meta">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
             <a href="https://fresco2k26.vercel.app/" target="_blank">Live ↗</a>
@@ -162,7 +172,9 @@
 
         <div class="project">
           <h4>Bhasha Kisan</h4>
-          <p>Built a multilingual website for farmers to access agricultural resources in their native language.</p>
+          <p>Built a multilingual web platform that helps farmers access agricultural 
+          resources, crop guidance, and government schemes in their native language. 
+          Designed to be accessible to users with limited digital literacy.</p>
           <div class="project-meta">
             <span>HTML</span><span>CSS</span><span>Python</span>
             <a href="https://github.com/tejasz29/Bhasha_Kisan" target="_blank">Code ↗</a>
@@ -173,7 +185,9 @@
 
       <div class="project">
           <h4>Voice Notes</h4>
-          <p>A voice-controlled notes app using the Web Speech API.</p>
+          <p>A browser-based notes app that lets users create, save, and manage notes 
+          entirely by voice using the Web Speech API — no typing required. Built to 
+          explore accessibility-first design.</p>
           <div class="project-meta">
             <span>HTML</span><span>CSS</span><span>Python</span>
             <a href="https://github.com/tejasz29/voice-notes-app" target="_blank">Code ↗</a>
@@ -443,7 +457,8 @@
   </div>
           <div class="cert-info">
             <span class="cert-name">Python for Data Science</span>
-            <span class="cert-issuer">NPTEL | Score: 76%</span>
+            <span class="cert-issuer">NPTEL | Covers NumPy, Pandas, data visualization, 
+and intro ML concepts</span>
             <span class="cert-date">April 2026</span>
           </div>
           <a href="certificates/nptel result.pdf" class="cert-link" target="_blank" aria-label="View certificate">
@@ -558,7 +573,9 @@
       <h3>Hobbies</h3>
       <div class="meta-block">
         <p>
-          Apart from academics and technology, I love to play football, chess, and explore new music. I extremely enjoy travelling and exploring new cultures. I also like to watch movies and web series in my free time.
+          Apart from academics and technology, I love to play football, chess, and explore new music. I extremely enjoy travelling and exploring new cultures. I also like to watch movies and web series in my free time. <br>
+          Currently watching: "Berlin" and whatever everyone 
+          tells me I absolutely have to see.
         </p>
       </div>
     </article>
@@ -585,10 +602,9 @@
       </div>
     </article>
 
-    <a href="certificates/Tejas Eklare.pdf" class="mobile-link resume-mobile" download>↓ Download Resume</a>
   </section>
 
-  <footer>© 2026 Tejas — Built with focus and consistency.</footer>
+  <footer>© 2026 Tejas Eklare — Designed with love and built from scratch.</footer>
 
 </main>
 
@@ -619,17 +635,87 @@
   });
 
 // ── Avatar ring + highlight words ──
+// const avatarWrapper = document.querySelector('.avatar');
+// const avatarImg     = document.querySelector('.avatar img.profile');
+
+// const highlightWords = [
+//   'full-stack development',
+//   'AI',
+//   'Machine Learning',
+//   'hands-on projects',
+//   'fundamentals',
+//   'abstractions',
+//   'IoT voice assistants',
+//   'VPKBIET',
+
+// ];
+
+// document.querySelectorAll('#about p').forEach(p => {
+//   let html = p.innerHTML;
+//   highlightWords.forEach(word => {
+//     const regex = new RegExp(`(${word})`, 'gi');
+//     html = html.replace(regex, '<span class="highlight-word">$1</span>');
+//   });
+//   p.innerHTML = html;
+// });
+
+// if (avatarWrapper) {
+//   let swapped    = false;
+//   let swapTimer  = null;
+//   let resetTimer = null;
+
+//   avatarWrapper.addEventListener('mouseenter', () => {
+//     clearTimeout(resetTimer);
+//     swapTimer = setTimeout(() => {
+//       document.querySelectorAll('.highlight-word').forEach((el, i) => {
+//         setTimeout(() => el.classList.add('lit'), i * 80);
+//       });
+//     }, 500);
+
+//     if (!swapped && avatarImg.dataset.alt) {
+//       setTimeout(() => { avatarImg.src = avatarImg.dataset.alt; swapped = true; }, 600);
+//     }
+//   });
+
+//   avatarWrapper.addEventListener('mouseleave', () => {
+//     clearTimeout(swapTimer);
+//     resetTimer = setTimeout(() => {
+//       document.querySelectorAll('.highlight-word').forEach(el => el.classList.remove('lit'));
+//     }, 150);
+//     setTimeout(() => { avatarImg.src = 'me-1.jpeg'; swapped = false; }, 200);
+//   });
+// }
+
+// // ── Highlight all major headings on avatar hover ──
+// const headings = document.querySelectorAll('.content h2, .content h3');
+
+// avatarWrapper.addEventListener('mouseenter', () => {
+//   setTimeout(() => {
+//     headings.forEach((el, i) => {
+//       setTimeout(() => el.classList.add('heading-lit'), i * 100);
+//     });
+//   }, 400);
+// });
+
+// avatarWrapper.addEventListener('mouseleave', () => {
+//   setTimeout(() => {
+//     headings.forEach(el => el.classList.remove('heading-lit'));
+//   }, 150);
+// });
+
+
 const avatarWrapper = document.querySelector('.avatar');
 const avatarImg     = document.querySelector('.avatar img.profile');
 
 const highlightWords = [
   'full-stack development',
-  'Artificial Intelligence',
+  'AI',
   'Machine Learning',
   'hands-on projects',
   'fundamentals',
   'abstractions',
-
+  'IoT voice assistants',
+  'VPKBIET',
 ];
 
 document.querySelectorAll('#about p').forEach(p => {
@@ -641,49 +727,63 @@ document.querySelectorAll('#about p').forEach(p => {
   p.innerHTML = html;
 });
 
+const headings = document.querySelectorAll('.content h2, .content h3');
+
+let isLit = false; // toggle state
+
 if (avatarWrapper) {
-  let swapped    = false;
-  let swapTimer  = null;
-  let resetTimer = null;
-
   avatarWrapper.addEventListener('mouseenter', () => {
-    clearTimeout(resetTimer);
-    swapTimer = setTimeout(() => {
-      document.querySelectorAll('.highlight-word').forEach((el, i) => {
-        setTimeout(() => el.classList.add('lit'), i * 80);
-      });
-    }, 500);
+    if (!isLit) {
+      // Turn everything ON
+      isLit = true;
 
-    if (!swapped && avatarImg.dataset.alt) {
-      setTimeout(() => { avatarImg.src = avatarImg.dataset.alt; swapped = true; }, 600);
+      if (avatarImg.dataset.alt) {
+        setTimeout(() => { 
+          avatarImg.src = avatarImg.dataset.alt;
+          avatarImg.classList.add('colored'); // ← add this
+        }, 600);
+      }
+
+      // Swap to colorful photo
+      if (avatarImg.dataset.alt) {
+        setTimeout(() => { avatarImg.src = avatarImg.dataset.alt; }, 600);
+      }
+
+      // Light up words
+      setTimeout(() => {
+        document.querySelectorAll('.highlight-word').forEach((el, i) => {
+          setTimeout(() => el.classList.add('lit'), i * 80);
+        });
+      }, 500);
+
+      // Light up headings
+      setTimeout(() => {
+        headings.forEach((el, i) => {
+          setTimeout(() => el.classList.add('heading-lit'), i * 100);
+        });
+      }, 400);
+
+    } else {
+      // Turn everything OFF
+      isLit = false;
+
+      avatarImg.src = 'me-1.jpeg';
+      avatarImg.classList.remove('colored');
+
+      // Swap back to grayscale photo
+      avatarImg.src = 'me-1.jpeg';
+
+      // Remove word highlights
+      document.querySelectorAll('.highlight-word').forEach(el => el.classList.remove('lit'));
+
+      // Remove heading highlights
+      headings.forEach(el => el.classList.remove('heading-lit'));
     }
   });
 
-  avatarWrapper.addEventListener('mouseleave', () => {
-    clearTimeout(swapTimer);
-    resetTimer = setTimeout(() => {
-      document.querySelectorAll('.highlight-word').forEach(el => el.classList.remove('lit'));
-    }, 150);
-    setTimeout(() => { avatarImg.src = 'me-1.jpeg'; swapped = false; }, 200);
-  });
+  // mouseleave does nothing — state persists
+  avatarWrapper.addEventListener('mouseleave', () => {});
 }
-
-// ── Highlight all major headings on avatar hover ──
-const headings = document.querySelectorAll('.content h2, .content h3');
-
-avatarWrapper.addEventListener('mouseenter', () => {
-  setTimeout(() => {
-    headings.forEach((el, i) => {
-      setTimeout(() => el.classList.add('heading-lit'), i * 100);
-    });
-  }, 400);
-});
-
-avatarWrapper.addEventListener('mouseleave', () => {
-  setTimeout(() => {
-    headings.forEach(el => el.classList.remove('heading-lit'));
-  }, 150);
-});
 
 
 // ── Minimal floating stars ──

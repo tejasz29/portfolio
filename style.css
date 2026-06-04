@@ -185,7 +185,7 @@ body {
 }
 
 .tagline {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #9a9a9a;
   margin-bottom: 10px;
 }
@@ -239,7 +239,7 @@ article p {
   margin-bottom: 28px;
 }
 
-.avatar img.profile {
+/* .avatar img.profile {
   width: 96px;
   height: 96px;
   object-fit: cover;
@@ -284,7 +284,63 @@ article p {
   pointer-events: none;
   z-index: 0;
 }
-.avatar:hover::after { opacity: 1; transition-delay: 0.6s; }
+.avatar:hover::after { opacity: 1; transition-delay: 0.6s; } */
+
+
+.avatar img.profile {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 108px;
+  height: 108px;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.ring circle {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 3.4;
+  stroke-dasharray: 302;
+  stroke-dashoffset: 302;
+  transition: stroke-dashoffset 1.3s ease;
+}
+
+/* OLD hover-only rules — keep these so hover still works on second entry */
+.avatar:hover .ring circle { stroke-dashoffset: 0; }
+.avatar:hover img.profile  { filter: grayscale(0%) contrast(1.05); transition-delay: 1s; }
+.avatar:hover::after       { opacity: 1; transition-delay: 0.6s; }
+
+/* NEW .lit class rules — these persist after cursor leaves */
+.avatar.lit .ring circle { stroke-dashoffset: 0; }
+.avatar.lit img.profile  { filter: grayscale(0%) contrast(1.05); transition-delay: 1s; }
+.avatar.lit::after       { opacity: 1; transition-delay: 0.6s; }
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0.15) 35%, transparent 70%);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
 
 /* ─── LOCATION ─── */
 .location {
@@ -349,11 +405,25 @@ article p {
 .socials .github:hover { color: #ffffff; }
 
 /* ─── SKILLS ─── */
+
 .skills-grid {
   margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  display: flex;
   gap: 14px;
+  flex-wrap: wrap;
+}
+
+.skills-category {
+  margin-bottom: 2rem;
+}
+
+.skills-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaaaaa;       
+  margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 
 .skill-card {
@@ -826,32 +896,36 @@ body {
              float     calc(var(--dur) * 2) ease-in-out infinite var(--delay);
 }
 
-/* .timeline-body {
+
+
+.profile-photo {
+  animation: colorHint 3s ease-in-out infinite;
   cursor: pointer;
 }
 
-.timeline-gallery {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s ease;
+@keyframes colorHint {
+  0%   { filter: grayscale(100%); }
+  50%  { filter: grayscale(60%); }
+  100% { filter: grayscale(100%); }
 }
 
-.timeline-item.active .timeline-gallery {
-  max-height: 500px;
-  opacity: 1;
-  margin-top: 20px;
+.profile-photo:hover {
+  filter: grayscale(0%); /* your existing full color effect */
+  transition: filter 0.4s ease;
 }
 
-.timeline-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+.profile-photo {
+  animation: gentleNudge 0.5s ease 2s 1; /* runs once, 2s delay */
 }
 
-.timeline-gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-} */
+@keyframes gentleNudge {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-2deg); }
+  75%  { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.avatar img.profile.colored {
+  filter: grayscale(0%);
+}
+
