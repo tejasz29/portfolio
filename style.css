@@ -973,22 +973,5 @@ body {
   filter: grayscale(0%);
 }
 
-.brut-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 3rem 0;
-  color: #22c55e;
-  font-family: monospace;
-  font-size: 1rem;
-  opacity: 0.5;
-}
-.brut-divider::before,
-.brut-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: #22c55e;
-  opacity: 0.3;
-}
+
 
