@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Tejas Eklare</title>
+  <meta name="description" content="All projects by Tejas Eklare — full-stack developer and CS undergrad.">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #e5e5e5;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    .proj-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid #22c55e22;
+      position: sticky;
+      top: 0;
+      background: #0a0a0a;
+      z-index: 10;
+    }
+    .proj-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+    }
+    .proj-nav-back {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #22c55e;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+      border: 1px solid #22c55e44;
+      padding: 5px 12px;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .proj-nav-back:hover {
+      opacity: 1;
+      background: #22c55e11;
+    }
+
+    /* PAGE */
+    .proj-page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .proj-page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .proj-page-sub {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #22c55e;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-bottom: 3.5rem;
+    }
+
+    /* PROJECT ITEM */
+    .proj-item {
+      margin-bottom: 5rem;
+    }
+
+    /* BROWSER MOCKUP */
+    .browser-mockup {
+      border: 1px solid #22c55e33;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: #111;
+    }
+    .browser-bar {
+      background: #1a1a1a;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #22c55e22;
+    }
+    .browser-dots {
+      display: flex;
+      gap: 5px;
+    }
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #333;
+    }
+    .browser-url {
+      flex: 1;
+      background: #222;
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .browser-mockup img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .browser-mockup .no-screenshot {
+      width: 100%;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #22c55e44;
+      letter-spacing: 0.1em;
+    }
+
+    /* PROJECT INFO */
+    .proj-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .proj-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #aaa;
+      margin-bottom: 1rem;
+      max-width: 600px;
+    }
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.2rem;
+    }
+    .brut-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-family: monospace;
+      color: #22c55e;
+      border: 1px solid #22c55e55;
+      padding: 2px 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .proj-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .proj-btn {
+      font-family: monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      padding: 7px 18px;
+      text-decoration: none;
+      border: 1px solid #22c55e;
+      color: #22c55e;
+      transition: background 0.15s, color 0.15s;
+    }
+    .proj-btn:hover {
+      background: #22c55e;
+      color: #000;
+    }
+    .proj-btn.filled {
+      background: #22c55e;
+      color: #000;
+    }
+    .proj-btn.filled:hover {
+      background: transparent;
+      color: #22c55e;
+    }
+
+    /* DIVIDER */
+    .proj-divider {
+      border: none;
+      border-top: 1px solid #22c55e18;
+      margin-bottom: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="proj-nav">
+    <a href="index.html" class="proj-nav-logo">
+      <svg viewBox="0 0 36 20" width="36" height="20" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0"  y="0"  width="4" height="4" fill="#22c55e"/>
+        <rect x="4"  y="0"  width="4" height="4" fill="#22c55e"/>
+        <rect x="0"  y="4"  width="4" height="4" fill="#22c55e"/>
+        <rect x="4"  y="4"  width="4" height="4" fill="#22c55e"/>
+        <rect x="0"  y="8"  width="4" height="4" fill="#22c55e"/>
+        <rect x="4"  y="8"  width="4" height="4" fill="#22c55e"/>
+        <rect x="0"  y="12" width="4" height="4" fill="#22c55e"/>
+        <rect x="4"  y="12" width="4" height="4" fill="#22c55e"/>
+        <rect x="0"  y="16" width="4" height="4" fill="#22c55e"/>
+        <rect x="4"  y="16" width="4" height="4" fill="#22c55e"/>
+        <rect x="8"  y="0"  width="4" height="4" fill="#22c55e" opacity="0.8"/>
+        <rect x="8"  y="8"  width="4" height="4" fill="#22c55e" opacity="0.6"/>
+        <rect x="8"  y="16" width="4" height="4" fill="#22c55e" opacity="0.5"/>
+        <rect x="12" y="4"  width="4" height="4" fill="#22c55e" opacity="0.4"/>
+        <rect x="12" y="12" width="4" height="4" fill="#22c55e" opacity="0.3"/>
+        <rect x="16" y="0"  width="4" height="4" fill="#22c55e" opacity="0.2"/>
+        <rect x="20" y="4"  width="4" height="4" fill="#22c55e" opacity="0.15"/>
+        <rect x="24" y="0"  width="4" height="4" fill="#22c55e" opacity="0.08"/>
+      </svg>
+      TE
+    </a>
+    <a href="index.html" class="proj-nav-back">← Back to home</a>
+  </nav>
+
+  <div class="proj-page">
+
+    <h1 class="proj-page-title">All Projects</h1>
+    <p class="proj-page-sub">// EVERYTHING I'VE BUILT</p>
+
+    <!-- PROJECT 1 — NyayaBot -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/NyayaBot</div>
+        </div>
+        <img src="screenshots/nyayabot.png" alt="NyayaBot screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">NyayaBot</h2>
+      <p class="proj-desc">Ask any legal question in plain English. Get answers grounded in real
+      Indian court judgments — with citations. Built using a 3-layer hybrid RAG pipeline
+      with semantic search, BM25, and cross-encoder reranking.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">FastAPI</span>
+        <span class="brut-tag">Next.js</span>
+        <span class="brut-tag">Qdrant</span>
+        <span class="brut-tag">LLaMA 3.3 70B</span>
+        <span class="brut-tag">Groq</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/NyayaBot" target="_blank" class="proj-btn">↗ Source</a>
+        <a href="https://nyaya-bot-five.vercel.app/" target="_blank" class="proj-btn filled">↗ Visit</a>
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+    <!-- PROJECT 2 — Multi-Agent Exam Planner -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/multi-agent</div>
+        </div>
+        <img src="screenshots/multi-agent.png" alt="Multi-Agent Exam Planner screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">Multi-Agent Exam Planner</h2>
+      <p class="proj-desc">A smart AI-powered exam preparation system that generates personalized
+      day-wise study plans using a multi-agent architecture. Built for students who want
+      structured, topic-wise planning — not generic study tips.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">Python</span>
+        <span class="brut-tag">Streamlit</span>
+        <span class="brut-tag">Groq</span>
+        <span class="brut-tag">LLaMA</span>
+        <span class="brut-tag">SQLite</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/multi-agent" target="_blank" class="proj-btn">↗ Source</a>
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+    <!-- PROJECT 3 — Voice Assistant -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-</div>
+        </div>
+        <img src="screenshots/esp32.png" alt="Voice Assistant screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">Voice Assistant using ESP32 and Flask</h2>
+      <p class="proj-desc">Built an IoT voice assistant that runs on an ESP32 microcontroller and
+      communicates with a Flask backend to process and respond to voice commands. Explored
+      the intersection of embedded hardware and web-based AI services.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">Python</span>
+        <span class="brut-tag">C++</span>
+        <span class="brut-tag">Flask</span>
+        <span class="brut-tag">ESP32</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank" class="proj-btn">↗ Source</a>
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+    <!-- PROJECT 4 — FRESCO -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">fresco2k26.vercel.app</div>
+        </div>
+        <img src="screenshots/fresco.png" alt="FRESCO screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">FRESCO Cultural Event Website</h2>
+      <p class="proj-desc">Designed and developed the official website for FRESCO, our college's
+      annual cultural festival. Built fully responsive with a focus on visual hierarchy,
+      smooth layout rhythm, and performance across devices.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">HTML</span>
+        <span class="brut-tag">CSS</span>
+        <span class="brut-tag">JavaScript</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/Fresco-website" target="_blank" class="proj-btn">↗ Source</a>
+        <a href="https://fresco2k26.vercel.app/" target="_blank" class="proj-btn filled">↗ Visit</a>
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+    <!-- PROJECT 5 — Bhasha Kisan -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/Bhasha_Kisan</div>
+        </div>
+        <img src="screenshots/bhasha-kisan.png" alt="Bhasha Kisan screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">Bhasha Kisan</h2>
+      <p class="proj-desc">Built a multilingual web platform that helps farmers access agricultural
+      resources, crop guidance, and government schemes in their native language. Designed
+      to be accessible to users with limited digital literacy.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">HTML</span>
+        <span class="brut-tag">CSS</span>
+        <span class="brut-tag">Python</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/Bhasha_Kisan" target="_blank" class="proj-btn">↗ Source</a>
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+    <!-- PROJECT 6 — Voice Notes -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/voice-notes-app</div>
+        </div>
+        <img src="screenshots/voice-notes.png" alt="Voice Notes screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">Voice Notes</h2>
+      <p class="proj-desc">A browser-based notes app that lets users create, save, and manage notes
+      entirely by voice using the Web Speech API — no typing required. Built to explore
+      accessibility-first design.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">HTML</span>
+        <span class="brut-tag">CSS</span>
+        <span class="brut-tag">JavaScript</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/voice-notes-app" target="_blank" class="proj-btn">↗ Source</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

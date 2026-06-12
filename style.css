@@ -974,4 +974,9 @@ body {
 }
 
 
+.view-all-wrap {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
 
