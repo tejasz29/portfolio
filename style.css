@@ -387,7 +387,7 @@ article p {
 
 
 /* ─── LOCATION ─── */
-.location {
+/* .location {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -406,6 +406,14 @@ article p {
   font-size: 0.9rem;
   color: #9a9a9a;
   margin: 0;
+} */
+
+.location {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #6a8976;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
 }
 
 /* ─── SOCIALS ─── */
