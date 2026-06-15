@@ -56,12 +56,12 @@
 
     /* PAGE */
     .proj-page {
-      max-width: 780px;
+      max-width: 700px;
       margin: 0 auto;
       padding: 4rem 2rem 6rem;
     }
     .proj-page-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
     }
@@ -69,14 +69,14 @@
       font-family: monospace;
       font-size: 0.75rem;
       color: #22c55e;
-      opacity: 0.5;
+      opacity: 0.7;
       letter-spacing: 0.1em;
       margin-bottom: 3.5rem;
     }
 
     /* PROJECT ITEM */
     .proj-item {
-      margin-bottom: 5rem;
+      margin-bottom: 2.2rem;
     }
 
     /* BROWSER MOCKUP */
@@ -202,7 +202,7 @@
 }
 
 .proj-status {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-family: monospace;
   color: #22c55e;
   border: 1px solid #22c55e33;
@@ -244,8 +244,38 @@
     .proj-divider {
       border: none;
       border-top: 1px solid #22c55e18;
-      margin-bottom: 5rem;
+      margin-bottom: 3.5rem;
     }
+
+
+
+    /* ── Floating stars ── */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.6;  transform: scale(1.4); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.stars-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: twinkle var(--dur) ease-in-out infinite var(--delay),
+             float     calc(var(--dur) * 2) ease-in-out infinite var(--delay);
+}
+
   </style>
 </head>
 <body>
@@ -301,9 +331,9 @@
 
   <div class="proj-header">
     <h2 class="proj-name">Vani — AI Voice Assistant</h2>
-    <span class="proj-status">🟢 Active</span>
+    <span class="proj-status">Active</span>
   </div>
-  <p class="proj-subtitle">Previously: ESP32 + Flask Voice Assistant</p>
+  <!-- <p class="proj-subtitle">Previously: ESP32 + Flask Voice Assistant</p> -->
 
   <p class="proj-desc">
     Built an IoT voice assistant on ESP32 using an INMP441 MEMS microphone and MAX98357A I2S
@@ -333,7 +363,6 @@
   </div>
 </div>
 <hr class="proj-divider">
-
 
 
 
@@ -398,8 +427,6 @@
       </div>
     </div>
     <hr class="proj-divider">
-
-
 
 
 
@@ -550,3 +577,26 @@
   </div>
 </body>
 </html>
+
+
+<script>
+// ── Minimal floating stars ──
+const canvas = document.createElement('div');
+canvas.className = 'stars-canvas';
+document.body.prepend(canvas);
+
+for (let i = 0; i < 50; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2 + 1; // 1px–3px, more visible
+  star.style.cssText = `
+    width: ${size}px;
+    height: ${size}px;
+    top: ${Math.random() * 100}%;
+    left: ${Math.random() * 100}%;
+    --dur: ${Math.random() * 4 + 3}s;
+    --delay: -${Math.random() * 8}s;
+    opacity: ${Math.random() * 0.3 + 0.2};
+  `;
+  canvas.appendChild(star);
+}</script>
