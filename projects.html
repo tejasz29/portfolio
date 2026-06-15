@@ -193,6 +193,53 @@
       color: #22c55e;
     }
 
+
+  .proj-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.proj-status {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #22c55e;
+  border: 1px solid #22c55e33;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.proj-subtitle {
+  font-size: 0.78rem;
+  color: #555;
+  font-family: monospace;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.proj-hardware {
+  font-size: 0.82rem;
+  font-family: monospace;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.hardware-label {
+  color: #22c55e;
+  margin-right: 6px;
+}
+
+.proj-btn-accent {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.proj-btn-accent:hover {
+  background: #22c55e;
+  color: #0a0a0a;
+}
+
     /* DIVIDER */
     .proj-divider {
       border: none;
@@ -236,6 +283,62 @@
     <h1 class="proj-page-title">All Projects</h1>
     <p class="proj-page-sub">// EVERYTHING I'VE BUILT</p>
 
+
+
+    <!-- PROJECT 3 — Vani (formerly ESP32 Voice Assistant) -->
+<div class="proj-item">
+  <div class="browser-mockup">
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-</div>
+    </div>
+    <img src="screenshots/esp32.jpeg" alt="Vani ESP32 hardware build"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+    <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+  </div>
+
+  <div class="proj-header">
+    <h2 class="proj-name">Vani — AI Voice Assistant</h2>
+    <span class="proj-status">🟢 Active</span>
+  </div>
+  <p class="proj-subtitle">Previously: ESP32 + Flask Voice Assistant</p>
+
+  <p class="proj-desc">
+    Built an IoT voice assistant on ESP32 using an INMP441 MEMS microphone and MAX98357A I2S
+    amplifier, communicating with a Flask backend for voice processing via Google STT and Gemini AI.
+    Now evolving into <strong>Vani</strong> — an India-first, Hinglish-native AI voice assistant
+    designed for Indian homes as an affordable alternative to Alexa and Google Home.
+  </p>
+
+  <p class="proj-hardware">
+    <span class="hardware-label">Hardware:</span>
+    ESP32 DevKit · INMP441 Mic · MAX98357A Amp · Breadboard Prototype
+  </p>
+
+  <div class="proj-tags">
+    <span class="brut-tag">Python</span>
+    <span class="brut-tag">Flask</span>
+    <span class="brut-tag">ESP32</span>
+    <span class="brut-tag">Embedded C</span>
+    <span class="brut-tag">Voice AI</span>
+    <span class="brut-tag">Hinglish</span>
+    <span class="brut-tag">IoT</span>
+  </div>
+
+  <div class="proj-buttons">
+    <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank" class="proj-btn">↗ Source</a>
+    <a href="https://vani.vercel.app/" target="_blank" class="proj-btn proj-btn-accent">↗ Join Waitlist</a>
+  </div>
+</div>
+<hr class="proj-divider">
+
+
+
+
+
+
     <!-- PROJECT 1 — NyayaBot -->
     <div class="proj-item">
       <div class="browser-mockup">
@@ -267,6 +370,40 @@
     </div>
     <hr class="proj-divider">
 
+
+        <!-- PROJECT 1 — NyayaBot -->
+    <div class="proj-item">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-url">github.com/tejasz29/NyayaBot</div>
+        </div>
+        <img src="" alt="NyayaBot screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="no-screenshot" style="display:none">[ screenshot coming soon ]</div>
+      </div>
+      <h2 class="proj-name">PXL</h2>
+      <p class="proj-desc">PXL is a lightweight screenshot annotation tool built for Windows. Capture any region of your screen with a global hotkey, annotate it with arrows, text, and highlights, then copy directly to clipboard and paste anywhere — Claude, Slack, Notion, email. Built to fill the gap CleanShot X left on Windows.</p>
+      <div class="proj-tags">
+        <span class="brut-tag">React + Vite</span>
+        <span class="brut-tag">Electron</span>
+        <span class="brut-tag">Javascript</span>
+        <span class="brut-tag">CSS</span>
+      </div>
+      <div class="proj-buttons">
+        <a href="https://github.com/tejasz29/Pxl" target="_blank" class="proj-btn">↗ Source</a>
+
+      </div>
+    </div>
+    <hr class="proj-divider">
+
+
+
+
+
+
     <!-- PROJECT 2 — Multi-Agent Exam Planner -->
     <div class="proj-item">
       <div class="browser-mockup">
@@ -297,7 +434,7 @@
     </div>
     <hr class="proj-divider">
 
-    <!-- PROJECT 3 — Voice Assistant -->
+    <!-- PROJECT 3 — Voice Assistant
     <div class="proj-item">
       <div class="browser-mockup">
         <div class="browser-bar">
@@ -324,7 +461,7 @@
         <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank" class="proj-btn">↗ Source</a>
       </div>
     </div>
-    <hr class="proj-divider">
+    <hr class="proj-divider"> -->
 
     <!-- PROJECT 4 — FRESCO -->
     <div class="proj-item">
