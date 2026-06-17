@@ -9,6 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/jpg" href="img.jpg">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body>
 
@@ -88,7 +92,16 @@
     <h1>Hey, I'm Tejas</h1>
     <p class="tagline">19. Building India's <strong>Hinglish-native voice AI</strong>. Also do web, ML, and embedded systems.</p>
 
-    <p class="location">18.1849° N, 74.5999° E</p>
+    <!-- <p class="location"> > 18.1849° N, 74.5999° E</p> -->
+
+
+    <div class="location-wrap">
+      <p class="location">18.1849° N, 74.5999° E</p>
+      <div class="location-map-tooltip">
+        <div id="miniMap"></div>
+        <span class="map-label">📍 Pune, India</span>
+      </div>
+    </div>
 
     <div class="socials">
       <a href="https://github.com/tejasz29" target="_blank" class="social github" aria-label="GitHub">
@@ -774,6 +787,41 @@ for (let i = 0; i < 50; i++) {
   canvas.appendChild(star);
 }
 
+
+
+//MAP 
+let mapInitialized = false;
+
+document.querySelector('.location-wrap').addEventListener('mouseenter', () => {
+  if (mapInitialized) return;
+  mapInitialized = true;
+
+  const map = L.map('miniMap', {
+    center: [18.177001, 74.6131114],
+    zoom: 11,
+    zoomControl: true,
+    attributionControl: false,
+    dragging: true,
+    scrollWheelZoom: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19
+  }).addTo(map);
+
+  const greenIcon = L.divIcon({
+    html: `<div style="
+      width: 12px; height: 12px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    "></div>`,
+    className: '',
+    iconAnchor: [6, 6]
+  });
+
+  L.marker([18.1849, 74.5999], { icon: greenIcon }).addTo(map);
+});
 
 
 </script>
