@@ -96,13 +96,14 @@
 
 
     <div class="location-wrap">
-      <p class="location">18.177001° N , 74.6131114° E</p>
+      <p class="location">18.1770014° N 74.6131114° E</p>
       <div class="location-map-tooltip">
         <div id="miniMap"></div>
-        <span class="map-label">📍 Pune, India</span>
+        <span class="map-label">📍 Baramati, Pune, India</span>
       </div>
     </div>
-    
+
+    <br>
 
     <div class="socials">
       <a href="https://github.com/tejasz29" target="_blank" class="social github" aria-label="GitHub">
@@ -202,7 +203,7 @@
           Explored the intersection of embedded hardware and web-based AI services.</p>
           <div class="project-meta">
             <span>Python</span><span>C++</span>
-            <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank">Code ↗</a>
+            <a href="https://github.com/tejasz29/AI-Voice-assistant-using-ESP32-and-Flask-" target="_blank">Source ↗</a>
           </div>
       </div>
 
@@ -215,7 +216,7 @@
           <div class="project-meta">
             <span>Next.js</span><span>FastAPI</span><span>Qdrant</span><span>Llama 3.3 70B</span>
             <a href="https://nyaya-bot-five.vercel.app/" target="_blank">Live ↗</a>
-            <a href="https://github.com/tejasz29/NyayaBot" target="_blank">Code ↗</a>
+            <a href="https://github.com/tejasz29/NyayaBot" target="_blank">Source ↗</a>
           </div>
         </div>
 
@@ -226,7 +227,7 @@
           Designed to be accessible to users with limited digital literacy.</p>
           <div class="project-meta">
             <span>React</span><span>FastAPI</span><span>Tailwind CSS</span><span>Firebase</span>
-            <a href="https://github.com/tejasz29/Bhasha_Kisan" target="_blank">Code ↗</a>
+            <a href="https://github.com/tejasz29/Bhasha_Kisan" target="_blank">Source ↗</a>
           </div>
         </div>
       </div>
@@ -615,74 +616,6 @@ and intro ML concepts</span>
     });
   });
 
-// ── Avatar ring + highlight words ──
-// const avatarWrapper = document.querySelector('.avatar');
-// const avatarImg     = document.querySelector('.avatar img.profile');
-
-// const highlightWords = [
-//   'full-stack development',
-//   'AI',
-//   'Machine Learning',
-//   'hands-on projects',
-//   'fundamentals',
-//   'abstractions',
-//   'IoT voice assistants',
-//   'VPKBIET',
-
-// ];
-
-// document.querySelectorAll('#about p').forEach(p => {
-//   let html = p.innerHTML;
-//   highlightWords.forEach(word => {
-//     const regex = new RegExp(`(${word})`, 'gi');
-//     html = html.replace(regex, '<span class="highlight-word">$1</span>');
-//   });
-//   p.innerHTML = html;
-// });
-
-// if (avatarWrapper) {
-//   let swapped    = false;
-//   let swapTimer  = null;
-//   let resetTimer = null;
-
-//   avatarWrapper.addEventListener('mouseenter', () => {
-//     clearTimeout(resetTimer);
-//     swapTimer = setTimeout(() => {
-//       document.querySelectorAll('.highlight-word').forEach((el, i) => {
-//         setTimeout(() => el.classList.add('lit'), i * 80);
-//       });
-//     }, 500);
-
-//     if (!swapped && avatarImg.dataset.alt) {
-//       setTimeout(() => { avatarImg.src = avatarImg.dataset.alt; swapped = true; }, 600);
-//     }
-//   });
-
-//   avatarWrapper.addEventListener('mouseleave', () => {
-//     clearTimeout(swapTimer);
-//     resetTimer = setTimeout(() => {
-//       document.querySelectorAll('.highlight-word').forEach(el => el.classList.remove('lit'));
-//     }, 150);
-//     setTimeout(() => { avatarImg.src = 'me-1.jpeg'; swapped = false; }, 200);
-//   });
-// }
-
-// // ── Highlight all major headings on avatar hover ──
-// const headings = document.querySelectorAll('.content h2, .content h3');
-
-// avatarWrapper.addEventListener('mouseenter', () => {
-//   setTimeout(() => {
-//     headings.forEach((el, i) => {
-//       setTimeout(() => el.classList.add('heading-lit'), i * 100);
-//     });
-//   }, 400);
-// });
-
-// avatarWrapper.addEventListener('mouseleave', () => {
-//   setTimeout(() => {
-//     headings.forEach(el => el.classList.remove('heading-lit'));
-//   }, 150);
-// });
 
 
 const avatarWrapper = document.querySelector('.avatar');
@@ -812,7 +745,7 @@ document.querySelector('.location-wrap').addEventListener('mouseenter', () => {
 
   const greenIcon = L.divIcon({
     html: `<div style="
-      width: 12px; height: 12px;
+      width: 10px; height: 10px;
       background: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 8px #22c55e;
@@ -821,7 +754,7 @@ document.querySelector('.location-wrap').addEventListener('mouseenter', () => {
     iconAnchor: [6, 6]
   });
 
-  L.marker([18.1849, 74.5999], { icon: greenIcon }).addTo(map);
+  L.marker([18.177001, 74.6131114], { icon: greenIcon }).addTo(map);
 });
 
 
