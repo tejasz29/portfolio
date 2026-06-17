@@ -66,10 +66,6 @@ You can deploy this portfolio easily using:
 
 ## 📈 Future Improvements
 
-- Add project cards with live demos
-- Integrate a contact form (Google Forms / EmailJS)
-- Implement dark mode toggle
-- Add scroll-based animations
 - Migrate to React / Next.js for scalability
 
 ---
